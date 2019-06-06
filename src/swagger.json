@@ -1,0 +1,151 @@
+
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+      "name": "Countries",
+      "description": "API for Countries in the system"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+      "/countries": {
+          "GET": {
+            "tags": ["Get All Countries"],
+            "summary": "Get All Country details",
+            "responses": {
+              "200": {
+                "description": "OK"
+              },
+              "400": {
+                "description": "Bad request"
+              }
+            },
+            "content": {
+              "application/json": {}
+            }
+          },
+          "POST": {
+            "tags": ["Add Country details"],
+            "summary": "Add new record",
+            "responses": {
+              "200": {
+                "description": "ok"
+              },
+              "400": {
+                "description": "Bad request"
+              }
+            },
+            "content": {
+              "application/json": {}
+            },
+            "parameters": [
+              {
+                "name": "countryId",
+                "in": "body",
+                "description": "Specifies the request body",
+                "required": true,
+                "type": "integer"
+              },
+              {
+                "name": "name",
+                "in": "body",
+                "description": "Specifies the request body",
+                "required": true,
+                "type": "string"
+              },
+              {
+                "name": "languages",
+                "in": "body",
+                "description": "Specifies the request body",
+                "required": false,
+                "type": "string array"
+              }
+            ]        
+          }
+        },
+    "/countries/{countryId}": {
+      "parameters": [
+        {
+          "name": "countryId",
+          "in": "path",
+          "description": "Specifies the query string",
+          "required": true,
+          "type": "integer"
+        }
+      ],
+      "GET": {
+        "tags": ["Search Countries"],
+        "summary": "Search by countryId",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "content": {
+          "application/json": {}
+        }        
+      },
+      "DELETE": {
+        "tags": ["Delete Country details"],
+        "summary": "delete by countryId",
+        "responses": {
+          "200": {
+            "description": "Succesfully deleted"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "content": {
+          "application/json": {}
+        }
+      },
+      "PUT": {
+        "tags": ["Update Country details"],
+        "summary": "update by countryId",
+        "responses": {
+          "200": {
+            "description": "Succesfully updated"
+          },
+          "400": {
+            "description": "Bad request"
+          }
+        },
+        "content": {
+          "application/json": {}
+        },
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "description": "Specifies the request body",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "languages",
+            "in": "body",
+            "description": "Specifies the request body",
+            "required": false,
+            "type": "string array"
+          }
+        ]        
+      }
+    }
+  }
+}
