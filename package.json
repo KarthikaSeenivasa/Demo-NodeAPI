@@ -23,7 +23,7 @@
     "@types/node": "^6.0.46",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.2",
     "gulp-typescript": "^3.1.1",
     "mocha": "^3.1.2",
     "nodemon": "^1.18.11",
